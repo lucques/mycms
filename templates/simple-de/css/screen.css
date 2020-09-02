@@ -1,0 +1,309 @@
+@charset "UTF-8";
+
+@media screen, projection
+{
+	/* layout */
+
+	body
+	{
+		line-height:1.6;
+		margin:30px;
+	}
+
+	header
+	{
+		height:101px;
+		margin-top:0;
+		margin-bottom:0;
+		padding:30px;
+	}
+
+	footer
+	{
+		clear:right; /* float on #sidebar */
+	}
+
+	footer p
+	{
+		margin-bottom:0; /* same as margin-bottom of #sidebar */
+		padding:30px;
+		padding-top:0;
+	}
+
+	.section, .item
+	{
+		margin-bottom:30px;
+	}
+
+	.section.large-margin
+	{
+		margin-bottom:40px;
+	}
+
+	.section:last-child, .item:last-child, .item > :last-child
+	{
+		margin-bottom:0;
+	}
+
+	.item
+	{
+		border-bottom:3px solid #EEEEEE;
+		padding-bottom:30px;
+	}
+
+	.item:last-child
+	{
+		border-bottom-width:0;
+		padding-bottom:0;
+	}
+
+	.pagination, #top-nav ul
+	{
+		background-color:#F7F7F1;
+		border-width:1px 0;
+		list-style-type:none;
+		padding-top:8px;
+		padding-bottom:8px;
+		padding-left:0;
+	}
+
+	.pagination
+	{
+		border-style:dotted;
+		margin-left:0; /* for IE <= 7 */
+		text-align:center;
+	}
+
+	.pagination a, .pagination .current, #top-nav a, #top-nav .current
+	{
+		margin-right:10px;
+		margin-left:10px;
+	}
+
+	.pagination li, #top-nav li
+	{
+		display:inline;
+	}
+
+	#accessibility
+	{
+		position:absolute;
+		top:-10000px;
+	}
+
+	#wrapper
+	{
+		margin-left:auto;
+		margin-right:auto;
+		padding-top:10px;
+		padding-bottom:10px;
+		width:900px;
+	}
+
+	#logo
+	{
+		float:left; /* clear on #top-nav */
+		margin-right:30px;
+	}
+
+	#title
+	{
+		margin-top:0;
+	}
+
+	#description
+	{
+		margin-bottom:0;
+	}
+
+	#top-nav
+	{
+		clear:left; /* float on #logo */
+	}
+
+	#top-nav ul
+	{
+		margin:0 30px 30px 30px;
+	}
+
+	#sidebar
+	{
+		float:right; /* clear on footer */
+		margin-bottom:40px; /* same as margin-bottom of #content */
+		padding-right:30px;
+		width:210px; /* same as margin-right of #content - 30px padding-right - 60px margin to #content */
+	}
+
+	#sidebar h1, #sidebar h2, #sidebar h3, #sidebar h4, #sidebar h5, #sidebar h6
+	{
+		font-size:larger;
+	}
+
+	#sidebar > :first-child
+	{
+		margin-top:0; /* only for #sidebar, not for #content, because the margin of #content doesnt add up with */
+		              /* the margin-bottom of #top-nav ul */
+	}
+
+	#content
+	{
+		margin-right:300px; /* same as width of #sidebar + padding-right of #sidebar + 60px margin to #sidebar */
+		margin-bottom:40px;
+		padding-left:30px;
+	}
+
+	/* general */
+
+	h1, h2, h3, h4, h5, h6
+	{
+		color:#222222;
+		font-family:"Arial",sans-serif;
+	}
+
+	pre
+	{
+		background-color:#F7F7F7;
+		border-top:1px solid #AAAAAA;
+		border-bottom:1px solid #AAAAAA;
+		padding:10px;
+	}
+
+	table
+	{
+		border-collapse:collapse;
+	}
+
+	table.large, th.large, td.large
+	{
+		width:100%;
+	}
+
+	th, td, .lettering, .failure, .success
+	{
+		border-width:1px;
+		padding-right:10px;
+		padding-left:10px;
+	}
+
+	th, td
+	{
+		padding-top:5px;
+		padding-bottom:5px;
+	}
+
+	th
+	{
+		background-color:#EEEEEE;
+		font-weight:normal;
+		text-align:left;
+	}
+
+	th.small, td.small
+	{
+		width:0;
+	}
+
+	th.centered
+	{
+		text-align:center;
+	}
+
+	textarea
+	{
+		width:100%;
+	}
+
+	a
+	{
+		color:#4E5C21;
+		text-decoration:none;
+	}
+
+	a:hover
+	{
+		text-decoration:underline;
+	}
+
+	time
+	{
+		color:#A81817;
+	}
+
+	code
+	{
+		font-size:larger;
+	}
+
+	img
+	{
+		border-width:0;
+	}
+
+	.with-subline
+	{
+		margin-bottom:5px;
+	}
+
+	.subline
+	{
+		margin-top:0;
+	}
+
+	.lettering, .failure, .success
+	{
+		font-style:italic;
+		padding-top:10px;
+		padding-bottom:10px;
+	}
+
+	.lettering
+	{
+		background-color:#F5F5F5;
+		border-color:#8A8A8A;
+	}
+
+	.lettering > :first-child, .failure > :first-child, .success > :first-child
+	{
+		margin-top:0;
+	}
+
+	.lettering > :last-child, .failure > :last-child, .success > :last-child
+	{
+		margin-bottom:0;
+	}
+
+	.failure
+	{
+		background-color:#FFEFED;
+		border-color:#CC1D1C;
+	}
+
+	.success
+	{
+		background-color:#FFFFE0;
+		border-color:#B0A841;
+	}
+
+	.meta
+	{
+		color:#888888;
+		font-size:smaller;
+	}
+
+	.administrative
+	{
+		color:#0252B3;
+	}
+
+	/* mixed */
+
+	th, td, .lettering, .failure, .success, #top-nav ul
+	{
+		border-style:solid;
+	}
+
+	th, td, .pagination, #wrapper, #top-nav ul
+	{
+		border-color:#999999;
+	}
+}

@@ -1,0 +1,10 @@
+@charset "UTF-8";
+
+/* print */
+@media print
+{
+	.own-comment, .pagination, #accessibility, #top-nav, #sidebar
+	{
+		display:none;
+	}
+}

@@ -1,0 +1,58 @@
+@charset "UTF-8";
+
+@import url(screen.css);
+@import url(print.css);
+
+.picture.float-left, .picture.float-right
+{
+	margin-top:0;
+}
+
+.picture.float-right dd
+{
+	text-align:right;
+}
+
+.picture dd
+{
+	margin-left:0;
+
+	font-size:small;
+	font-style:italic;
+}
+
+code .keyword
+{
+	color:#7C007C; /* purple */
+	font-weight:bold;
+}
+
+code .comment
+{
+	color:#3F7F5F; /* green */
+	font-style:italic;
+}
+
+.float-left
+{
+	float:left;
+	margin-right:20px;
+	margin-bottom:20px;
+}
+
+.float-right
+{
+	float:right;
+	margin-bottom:20px;
+	margin-left:20px;
+}
+
+.clear-left
+{
+	clear:left;
+}
+
+.clear-right
+{
+	clear:right;
+}

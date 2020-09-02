@@ -1,0 +1,28 @@
+# php configuration
+php_flag magic_quotes_gpc off
+
+# mod_rewrite
+RewriteEngine on
+
+RewriteRule ^admin/login/$ index.php?get=login [L]
+RewriteRule ^admin/logout/$ index.php?get=logout [L]
+RewriteRule ^admin/dashboard/$ index.php?get=dashboard [L]
+RewriteRule ^admin/addpost/$ index.php?get=addPost [L]
+RewriteRule ^admin/editpost/([a-z0-9-]+)/$ index.php?get=editPost&id=$1 [L]
+RewriteRule ^admin/deletepost/([a-z0-9-]+)/$ index.php?get=deletePost&id=$1 [L]
+RewriteRule ^admin/editcomment/(0|[1-9][0-9]*)/$ index.php?get=editComment&id=$1 [L]
+RewriteRule ^admin/deletecomment/(0|[1-9][0-9]*)/$ index.php?get=deleteComment&id=$1 [L]
+RewriteRule ^admin/addcategory/$ index.php?get=addCategory [L]
+RewriteRule ^admin/editcategory/([a-z0-9-]+)/$ index.php?get=editCategory&id=$1 [L]
+RewriteRule ^admin/deletecategory/([a-z0-9-]+)/$ index.php?get=deleteCategory&id=$1 [L]
+RewriteRule ^admin/editsettings/$ index.php?get=editSettings [L]
+RewriteRule ^admin/edituser/([a-z0-9-]+)/$ index.php?get=editUser&id=$1 [L]
+
+RewriteRule ^$ index.php?get=recentPosts [L]
+RewriteRule ^([1-9][0-9]*)/$ index.php?get=recentPosts&page=$1 [L]
+RewriteRule ^feed/$ index.php?get=recentPostsFeed [L]
+RewriteRule ^archives/([0-9]{4})/([0-9]{2})/pages/([1-9][0-9]*)/$ index.php?get=yearMonthArchive&year=$1&month=$2&page=$3 [L]
+RewriteRule ^archives/([0-9]{4})/([0-9]{2})/$ index.php?get=yearMonthArchive&year=$1&month=$2 [L]
+RewriteRule ^archives/([a-z0-9-]+)/pages/([1-9][0-9]*)/$ index.php?get=categoryArchive&id=$1&page=$2 [L]
+RewriteRule ^archives/([a-z0-9-]+)/$ index.php?get=categoryArchive&id=$1 [L]
+RewriteRule ^([a-z0-9-]+)/$ index.php?get=showPost&id=$1 [L]
