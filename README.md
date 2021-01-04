@@ -2,9 +2,9 @@
 
 Simple CMS with focus on a puristic and (slightly overly) extensible architecture (discontinued after 2011, written in PHP 5)
 
-## Screenshot
+Screenshot: 
 
-![Screenshot](https://github.com/lucques/mycms/blob/master/screenshot.png?raw=true)
+![Screenshot](screenshot.png)
 
 ## How to use
 
