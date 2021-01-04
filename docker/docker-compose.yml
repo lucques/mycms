@@ -1,0 +1,32 @@
+version: '2'
+
+services:
+  php:
+    build: php
+    ports:
+      - "80:80"
+    volumes: 
+      - ../:/var/www/html
+    links:
+      - db
+    environment:
+      - MYCMS_DB_HOST=db
+      - MYCMS_DB_USER=root
+      - MYCMS_DB_PASSWORD
+      - MYCMS_DB_NAME
+      - MYCMS_DB_RELATION_PREFIX
+
+  db:
+    image: mysql:5.7
+    volumes:
+      - /var/lib/mysql
+    environment: 
+      - MYSQL_ROOT_PASSWORD=${MYCMS_DB_PASSWORD}
+      - MYSQL_DATABASE=${MYCMS_DB_NAME}
+
+  phpmyadmin:
+    image: phpmyadmin/phpmyadmin
+    ports:
+      - "8080:80"
+    links:
+      - db

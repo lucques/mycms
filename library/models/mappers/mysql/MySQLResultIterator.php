@@ -15,7 +15,7 @@
 		public function __construct($result)
 		{
 			$this->result = $result;
-			$this->size = mysql_num_rows($this->result);
+			$this->size = mysqli_num_rows($this->result);
 			$this->pointer = 0;
 		}
 
@@ -34,7 +34,7 @@
 
 			$this->pointer ++;
 
-			return mysql_fetch_assoc($this->result);
+			return mysqli_fetch_assoc($this->result);
 		}
 
 		/**
@@ -45,6 +45,6 @@
 			$this->pointer += $count;
 
 			if ($this->pointer < $this->size)
-				mysql_data_seek($this->result, $this->pointer);
+				mysqli_data_seek($this->result, $this->pointer);
 		}
 	}

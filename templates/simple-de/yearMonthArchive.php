@@ -10,11 +10,5 @@
 				</div>
 <?php
 	include 'includes/posts.php';
+	include 'includes/foot.php';
 ?>
-			</div>
-<?php
-	include 'includes/footer.php';
-?>
-		</div>
-	</body>
-</html>

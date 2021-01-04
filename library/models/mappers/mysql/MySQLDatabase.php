@@ -17,13 +17,13 @@
 		 */
 		public function __construct($host, $user, $password, $database, $relationPrefix)
 		{
-			$this->connection = mysql_connect($host, $user, $password);
+			$this->connection = mysqli_connect($host, $user, $password);
 
 			if ($this->connection === false)
 				throw new DatabaseException('Connecting failed.');
-			if (!mysql_select_db($database, $this->connection))
+			if (!mysqli_select_db($this->connection, $database))
 				throw new DatabaseException('Selecting database failed.');
-			if (!mysql_set_charset('utf8', $this->connection))
+			if (!mysqli_set_charset($this->connection, 'utf8'))
 				throw new DatabaseException('Setting charset to UTF8 failed.');
 
 			$this->relationPrefix = $relationPrefix;
@@ -35,7 +35,7 @@
 		 */
 		public function __destruct()
 		{
-			if (!mysql_close($this->connection))
+			if (!mysqli_close($this->connection))
 				throw new DatabaseException('Disconnecting failed.');
 		}
 
@@ -43,14 +43,14 @@
 		{
 			$this->numberOfQueries ++;
 
-			$result = mysql_query($sql, $this->connection);
+			$result = mysqli_query($this->connection, $sql);
 
 			if ($result === false)
 				throw new SQLException($sql);
 			if ($result === true)
 				return null;
 
-			return new MySQLResultIterator(mysql_query($sql, $this->connection));
+			return new MySQLResultIterator(mysqli_query($this->connection, $sql));
 		}
 
 		public function getNumberOfQueries()
@@ -60,7 +60,7 @@
 
 		public function escape($string)
 		{
-			$escaped = mysql_real_escape_string($string, $this->connection);
+			$escaped = mysqli_real_escape_string($this->connection, $string);
 
 			if ($escaped === false)
 				throw new DatabaseException('Escaping string failed.');
