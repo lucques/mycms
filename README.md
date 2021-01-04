@@ -2,6 +2,10 @@
 
 Simple CMS with focus on a puristic and (slightly overly) extensible architecture (discontinued after 2011, written in PHP 5)
 
+## Screenshot
+
+![Screenshot](https://github.com/lucques/mycms/blob/master/screenshot.png?raw=true)
+
 ## How to use
 
 Since this is a legacy project, I recommend running it via Docker. The following configuration is used:
